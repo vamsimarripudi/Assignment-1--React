@@ -82,7 +82,7 @@ const initialHistoryList = [
 // Replace your code here
 
 class App extends Component {
-  state = {searchInput: '', browserHistory: initialHistoryList}
+  state = {searchInput: '', browserHistory: initialHistoryList, isTrue: false}
 
   onChangeEvent = event => {
     this.setState({searchInput: event.target.value})
@@ -91,14 +91,23 @@ class App extends Component {
   onDeleteHistory = id => {
     const {browserHistory} = this.state
     const filterdHistory = browserHistory.filter(eachItem => eachItem.id !== id)
-    this.setState({browserHistory: filterdHistory})
+    if (filterdHistory === 0) {
+      this.setState({browserHistory: filterdHistory, isTrue: true})
+    } else {
+      this.setState({browserHistory: filterdHistory})
+    }
   }
 
   render() {
     const {browserHistory, searchInput} = this.state
+    let {isTrue} = this.state
     const searchResult = browserHistory.filter(eachHistory =>
       eachHistory.title.includes(searchInput),
     )
+
+    if (searchResult.length === 0) {
+      isTrue = true
+    }
 
     return (
       <>
@@ -106,7 +115,7 @@ class App extends Component {
           <img
             className="heading"
             src="https://assets.ccbp.in/frontend/react-js/history-website-logo-img.png"
-            alt="logo"
+            alt="app logo"
           />
           <div className="search-container">
             <img
@@ -124,12 +133,18 @@ class App extends Component {
           </div>
         </nav>
         <div>
-          {searchResult.map(eachHistory => (
-            <BrowserHistory
-              browserDetails={eachHistory}
-              deleteItem={this.onDeleteHistory}
-            />
-          ))}
+          {!isTrue && (
+            <ul className="unOrder-list">
+              {searchResult.map(eachHistory => (
+                <BrowserHistory
+                  browserDetails={eachHistory}
+                  deleteItem={this.onDeleteHistory}
+                  key={eachHistory.id}
+                />
+              ))}
+            </ul>
+          )}
+          {isTrue && <p className="paraG">There is no history to show</p>}
         </div>
       </>
     )

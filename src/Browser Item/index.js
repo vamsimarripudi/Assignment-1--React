@@ -9,25 +9,28 @@ const BrowserHistory = props => {
 
   return (
     <>
-      <div className="browser-container">
-        <p className="time-card">{timeAccessed}</p>
-        <div>
-          <div className="domain-card">
-            <img src={logoUrl} alt="logoUrl" className="img" />
-            <div className="card-card">
-              <p className="title">{title}</p>
-              <p className="domain-url">{domainUrl}</p>
+      <li>
+        <div className="browser-container">
+          <p className="time-card">{timeAccessed}</p>
+          <div>
+            <div className="domain-card">
+              <img src={logoUrl} alt="domain logo" className="img" />
+              <div className="card-card">
+                <p className="title">{title}</p>
+                <p className="domain-url">{domainUrl}</p>
+              </div>
+              <button data-testid="delete" className="button" type="button">
+                <img
+                  src="https://assets.ccbp.in/frontend/react-js/delete-img.png "
+                  alt="delete"
+                  className="delete-icon"
+                  onClick={onClickButton}
+                />
+              </button>
             </div>
-
-            <img
-              src="https://assets.ccbp.in/frontend/react-js/delete-img.png "
-              alt="delete"
-              className="delete-icon"
-              onClick={onClickButton}
-            />
           </div>
         </div>
-      </div>
+      </li>
     </>
   )
 }

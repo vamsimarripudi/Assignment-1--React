@@ -10,7 +10,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
 }
 
 .nav-bar {
@@ -21,6 +20,9 @@ body {
   margin-bottom: 20px;
 }
 
+.unOrder-list {
+  list-style-type: none;
+}
 .heading {
   margin-left: 100px;
   height: 35px;
@@ -45,4 +47,8 @@ body {
   width: 450px;
   border-style: 1px solid white;
   color: #ffffff;
+}
+
+.paraG {
+  text-align: center;
 }

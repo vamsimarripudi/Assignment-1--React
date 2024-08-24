@@ -50,6 +50,7 @@ img {
   height: 17px;
   margin-left: 10px;
 }
-.button-item {
-  text-align: left;
+.button {
+  background-color: #ffffff;
+  border-width: 0px;
 }
