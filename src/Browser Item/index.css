@@ -1,0 +1,55 @@
+* {
+  font-family: 'Roboto';
+}
+
+.browser-container {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding: 3px;
+  background-color: #ffffff;
+}
+.time-card {
+  font-size: 12px;
+  margin-left: 50px;
+}
+
+.domain-card {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+img {
+  height: 23px;
+  margin-left: 30px;
+}
+.title {
+  font-size: 14px;
+  margin-left: 5px;
+  font-family: 'Roboto';
+  color: #475569;
+}
+.card-card {
+  display: flex;
+  width: 940px;
+}
+
+.domain-url {
+  color: #64748b;
+  font-size: 13px;
+  margin-left: 10px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete-icon {
+  height: 17px;
+  margin-left: 10px;
+}
+.button-item {
+  text-align: left;
+}
